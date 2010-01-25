@@ -1,0 +1,16 @@
+.DS_Store
+config/*.yml
+db/schema.rb
+db/*.sqlite3
+log
+coverage
+coverage.data
+*~
+*.log
+*.swp
+*.swo
+.dotest
+.idea
+tmp/*
+log/*
+imgs
