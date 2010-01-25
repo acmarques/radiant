@@ -1,6 +1,5 @@
 .DS_Store
 config/*.yml
-db/schema.rb
 db/*.sqlite3
 log
 coverage
