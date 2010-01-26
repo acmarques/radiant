@@ -13,3 +13,4 @@ coverage.data
 tmp/*
 log/*
 imgs
+vendor/radiant/*
