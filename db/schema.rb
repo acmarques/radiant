@@ -109,17 +109,4 @@ ActiveRecord::Schema.define(:version => 20090929164633) do
 
   add_index "users", ["login"], :name => "login", :unique => true
 
-  create_table "versions", :force => true do |t|
-    t.integer  "versionable_id"
-    t.string   "versionable_type"
-    t.integer  "number"
-    t.string   "slug"
-    t.text     "yaml",              :limit => 16777215
-    t.integer  "parent_version_id"
-    t.datetime "created_at"
-    t.integer  "status_id"
-  end
-
-  add_index "versions", ["versionable_id", "versionable_type"], :name => "index_versions_on_versionable_id_and_versionable_type"
-
 end
