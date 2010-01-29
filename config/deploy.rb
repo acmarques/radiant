@@ -72,6 +72,8 @@ task :before_symlink do
   run "test -d #{release_path}/db || mkdir -m 755 #{release_path}/db"
   run "cp #{deploy_to}/etc/database.yml #{release_path}/config/database.yml"
   run "cd #{release_path} && rake db:migrate RAILS_ENV=production"
+  run "cd #{release_path}/public && rm -rf assets/"
+  run "cd #{release_path}/public && ln -s #{shared_path}/public/assets/ assets"
 end
 
 desc "Garante que as configuracoes estao adequadas"
