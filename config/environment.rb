@@ -89,3 +89,25 @@ Haml::Template.options[:ugly] = true if ENV['RAILS_ENV'] == 'production'
 
 Radiant::Config['code.processor'] = 'coderay'
 Radiant::Config['comments.simple_spam_filter_required?'] = false
+
+
+# The URL for the login form of your website.
+Radiant::Config["Member.login_path"] = '/members'
+
+# Members will be redirected here on successful login.
+Radiant::Config["Member.home_path"] = '/news'  
+
+# Everything under this path requires member login.
+Radiant::Config["Member.root_path"] = 'news'
+
+# This text will be rendered if the user fails to log in.
+Radiant::Config["Member.failed_login"] = "Couldn't log you in!"
+
+# This text will be rendered if the user succesfully logs in.
+Radiant::Config["Member.succesful_login"] = "Logged in successfully!"
+
+# This text will be rendered if the user succesfully logs out.
+Radiant::Config["Member.succesful_logout"] = "You have been logged out!" 
+
+# This text will be rendered if the page needs member access.
+Radiant::Config["Member.need_login"] = "Member must be logged in!"
