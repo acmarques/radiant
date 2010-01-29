@@ -23,6 +23,8 @@ Radiant::Initializer.run do |config|
 
   config.gem "sanitize"
   config.gem "will_paginate"
+  config.gem "coderay"
+  config.gem 'imagesize', :lib => 'image_size'
   
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
