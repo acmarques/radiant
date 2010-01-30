@@ -92,13 +92,13 @@ Radiant::Config['comments.simple_spam_filter_required?'] = false
 
 
 # The URL for the login form of your website.
-Radiant::Config["Member.login_path"] = '/members'
+Radiant::Config["Member.login_path"] = '/login'
 
 # Members will be redirected here on successful login.
-Radiant::Config["Member.home_path"] = '/news'  
+Radiant::Config["Member.home_path"] = '/private'  
 
 # Everything under this path requires member login.
-Radiant::Config["Member.root_path"] = 'news'
+Radiant::Config["Member.root_path"] = 'private'
 
 # This text will be rendered if the user fails to log in.
 Radiant::Config["Member.failed_login"] = "Couldn't log you in!"

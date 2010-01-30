@@ -1,0 +1,1 @@
+MemberExtensionSettings.defaults[:rest_auth_site_key] = "sjdhskjdhiuowi78237827301298usdkjshdkjshd2928398sdhdxbnxbvnxbc7736%%$#"
