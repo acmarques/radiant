@@ -11,46 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20090929164633) do
 
-  create_table "ad_banners", :force => true do |t|
-    t.string   "name"
-    t.string   "link_url"
-    t.string   "link_target"
-    t.integer  "asset_id"
-    t.integer  "weight"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "assets", :force => true do |t|
-    t.string   "caption"
-    t.string   "title"
-    t.string   "asset_file_name"
-    t.string   "asset_content_type"
-    t.integer  "asset_file_size"
-    t.integer  "created_by_id"
-    t.integer  "updated_by_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "comments", :force => true do |t|
-    t.integer  "page_id"
-    t.string   "author"
-    t.string   "author_url"
-    t.string   "author_email"
-    t.string   "author_ip"
-    t.text     "content"
-    t.text     "content_html"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "filter_id",    :limit => 25
-    t.string   "user_agent"
-    t.string   "referrer"
-    t.datetime "approved_at"
-    t.integer  "approved_by"
-    t.string   "mollom_id"
-  end
-
   create_table "config", :force => true do |t|
     t.string "key",   :limit => 40, :default => "", :null => false
     t.string "value",               :default => ""
@@ -75,44 +35,6 @@ ActiveRecord::Schema.define(:version => 20090929164633) do
     t.integer  "lock_version",                 :default => 0
   end
 
-  create_table "members", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "company"
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.string   "remember_token",            :limit => 40
-    t.datetime "remember_token_expires_at"
-    t.datetime "emailed_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "disabled_password"
-  end
-
-  create_table "old_page_attachments", :force => true do |t|
-    t.string   "content_type"
-    t.string   "filename"
-    t.integer  "size"
-    t.integer  "parent_id"
-    t.string   "thumbnail"
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at"
-    t.integer  "created_by"
-    t.datetime "updated_at"
-    t.integer  "updated_by"
-    t.integer  "page_id"
-    t.string   "title"
-    t.string   "description"
-    t.integer  "position"
-  end
-
-  create_table "page_attachments", :force => true do |t|
-    t.integer "asset_id"
-    t.integer "page_id"
-    t.integer "position"
-  end
-
   create_table "page_parts", :force => true do |t|
     t.string  "name",      :limit => 100
     t.string  "filter_id", :limit => 25
@@ -124,10 +46,10 @@ ActiveRecord::Schema.define(:version => 20090929164633) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
-    t.string   "slug",            :limit => 100
-    t.string   "breadcrumb",      :limit => 160
-    t.string   "class_name",      :limit => 25
-    t.integer  "status_id",                      :default => 1,     :null => false
+    t.string   "slug",          :limit => 100
+    t.string   "breadcrumb",    :limit => 160
+    t.string   "class_name",    :limit => 25
+    t.integer  "status_id",                    :default => 1,     :null => false
     t.integer  "parent_id"
     t.integer  "layout_id"
     t.datetime "created_at"
@@ -135,12 +57,10 @@ ActiveRecord::Schema.define(:version => 20090929164633) do
     t.datetime "published_at"
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
-    t.boolean  "virtual",                        :default => false, :null => false
-    t.integer  "lock_version",                   :default => 0
+    t.boolean  "virtual",                      :default => false, :null => false
+    t.integer  "lock_version",                 :default => 0
     t.string   "description"
     t.string   "keywords"
-    t.boolean  "enable_comments"
-    t.integer  "comments_count",                 :default => 0
   end
 
   add_index "pages", ["class_name"], :name => "pages_class_name"
