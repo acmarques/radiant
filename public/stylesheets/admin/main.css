@@ -328,15 +328,16 @@ img.avatar {
     #content form p.more_or_less a:hover, #content form p.more_or_less a:active, #content form p.more_or_less a:focus {
       text-decoration: underline; }
   #content form p.more_or_less #more_extended_metadata {
-    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 90% 8px; }
+    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 90% 8px; right: 761px; top: 2px;}
   #content form p.more_or_less #less_extended_metadata {
-    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; }
+    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; right: 761px; top: 125px;}
 #content form #extended_metadata {
   background: #7e7e7e url(/images/admin/navigation_shadow.png) repeat-x;
   border-bottom-right-radius: 6px;
+  float: left;
   -moz-border-bottom-right-radius: 6px;
   -webkit-border-bottom-right-radius: 6px;
-  margin: 0;
+  margin: 0 0 36px 0;
   padding-bottom: 2px;
   overflow: hidden; }
   #content form #extended_metadata table.fieldset {
