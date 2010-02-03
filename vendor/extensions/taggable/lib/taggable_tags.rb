@@ -86,15 +86,13 @@ module TaggableTags
       tag.locals.tags = Tag.for_cloud(tag.locals.tags).sort_by{|t| t.title.downcase}                          # nb. for_cloud immediately returns list if already sized
       listclass = options.delete('listclass') || 'cloud'
       show_checkboxes = (options.delete('checkbox') == 'true')
-      result = %{<ul class="#{listclass}">}
+      result = ''
       tag.locals.tags.each do |t|
         tag.locals.tag = t
-        result << %{<li>}
         linktype = options.delete('unlink') ? 'unlink' : 'link'
         result << tag.render("tag:#{linktype}", options.merge('style' => "font-size: #{t.cloud_size.to_f * 2.5}em; opacity: #{t.cloud_size};"))
-        result << %{</li>}
+        result << " "
       end 
-      result << "</ul>"
       result
     else
       "No tags"
